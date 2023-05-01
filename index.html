@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audioplayer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <div class="box">
+    <section class="left-top">
+      <i class="fa-solid fa-house"></i>
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </section>
+    <section class="left">
+      <div class="jhayco divArtist"></div>
+      <div class="badbunny divArtist"></div>
+      <div class="21savage savage divArtist"></div>
+      <div class="drake divArtist"></div>
+      <div class="feid divArtist"></div>
+      <div class="kendricklamar divArtist"></div>
+    </section>
+    <section class="center">
+      <div class="up">
+        <div class="background"></div>
+
+      </div>
+      <span id="nameArtist">Presiona un artista de la izquierda para ver las diferentes funciones.</span>
+      <span class="info"></span>
+      <div class="songs">
+        <div class="song">
+          <div class="songAalbum">
+            <i class="fa-solid fa-play"></i>
+            <div class="albumPhoto"></div>
+            <span id="txtSong">...</span>
+          </div>
+          <div class="btnsCenter">
+            <i class="fa-solid fa-plus"></i>
+            <i class="btnHeart fa-regular fa-heart"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="right">
+      <div class="rightBlur"></div>
+      <div class="rightBox">
+        <div class="songPhoto"></div>
+        <div class="dataPlayer">
+          <span class="nameSong">Imaginaste</span>
+          <span class="artistRight">Jhayco</span>
+        </div>
+        <input class="songBar" type="range" min="0" max="100">
+        <div class="durationVideo">
+          <span id="cTimeA">0:00</span>
+          <span id="fTimeA">0:00</span>
+        </div>
+        <audio id="audio" src="left/audios/imaginaste.mp3" autoplay></audio>
+        <div class="buttonSong">
+          <i class="btnBF fa-solid fa-backward"></i>
+          <i class="btnPlay fa-sharp fa-solid fa-play fa-xl"></i>
+          <i class="btnBF fa-solid fa-forward"></i>
+                </div>
+        <div class="volume">
+          <input class="rangeSound" type="range" min="0" max="100">
+          <i class="lowV fa-solid fa-volume-off"></i>
+          <i class="highV fa-solid fa-volume-high"></i>
+        </div>
+    </section>
+  </div>
+  </div>
+  <span class="infoAbout">Proyecto desarollado por Pedro De León, el uso que le den a esta página depende de la persona que la distribuya. Todas las canciones le pertenecen a sus respectivos dueños, en esta página web únicamente se busca demostrar el uso del reproductor, no buscamos distribuir nada. Las canciones e imágenes les pertenecen a los artistas que aparecen en la página. Con esta página no se obtiene ninguna ganancia.</span>
+</body>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script src="script.js"></script>
+
+</html>

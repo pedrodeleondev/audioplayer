@@ -1,0 +1,480 @@
+//IMPORTS
+@import url('https://necolas.github.io/normalize.css/8.0.1/normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+//VARIABLES
+$principal-color: #1ED760;
+
+
+//KEYFRAMES
+
+
+
+//CÓDIGO
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #acaeae #696969;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #696969;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #acaeae;
+    border: 3px solid #acaeae;
+}
+
+*::-webkit-scrollbar-thumb:Active {
+    background-color: white;
+    border: 3px solid white;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+}
+
+i {
+    transition: .4s all;
+    margin: 10px;
+    font-size: 30px;
+
+    &:hover {
+        color: $principal-color;
+        cursor: pointer;
+    }
+}
+
+.box {
+    display: block;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 80px 3.8fr 1fr;
+    grid-template-rows: 0.2fr 1.8fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "left-top center right"
+        "left center right";
+
+    section {
+        background-color: #121212;
+        margin: 5px;
+        border-radius: 10px;
+
+    }
+
+    .left-top {
+        grid-area: left-top;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .left {
+        grid-area: left;
+        display: flex;
+        flex-flow: column;
+        justify-content: start;
+        align-items: center;
+
+        div {
+            width: 60px;
+            height: 60px;
+            border-radius: 200px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+            position: relative;
+            transition: .4s all;
+            vertical-align: middle;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 200px;
+                display: block;
+                background-color: transparent;
+                opacity: 0.7;
+                transition: .4s all;
+
+            }
+
+            &:hover {
+                background-size: 150%;
+                cursor: pointer;
+            }
+
+            &:hover::before {
+                background-color: $principal-color;
+
+            }
+        }
+
+        .jhayco {
+            background-image: url('left/artists/jhayco-pic.jpg');
+            position: relative;
+
+            span {
+                position: absolute;
+                text-align: center;
+                color: wheat;
+            }
+        }
+
+        .badbunny {
+            background-image: url('left/artists/badbunny-pic.jpg');
+        }
+
+        .drake {
+            background-image: url('left/artists/drake-pic.jpg');
+
+        }
+
+        .feid {
+            background-image: url('left/artists/feid-pic.jpg');
+
+        }
+
+        .savage {
+            background-image: url('left/artists/21savage-pic.jpg');
+
+        }
+
+        .kendricklamar {
+            background-image: url('left/artists/kendricklamar-pic.jpg');
+
+        }
+    }
+
+    .center {
+        grid-area: center;
+        position: relative;
+        overflow: hidden;
+        overflow-y: auto;
+
+        .up {
+
+            width: 100%;
+            height: 400px;
+            display: relative;
+
+            .background {
+                background-image: url('./left/image.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top 10%;
+                width: 100%;
+                height: 400px;
+                position: relative;
+                filter: blur(2px);
+                z-index: 1;
+
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                    background: rgb(2, 0, 36);
+                    background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, rgba(18, 18, 18, 1) 100%);
+                }
+
+
+            }
+
+
+        }
+
+        #nameArtist {
+            display: block;
+            margin: 50px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 50px;
+        }
+
+        .info {
+            font-style: italic;
+            font-weight: 400;
+            margin: 50px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-left: 70px;
+            display: block;
+            font-size: 20px;
+        }
+
+        .songs {
+            display: none;
+            position: relative;
+            margin: 50px;
+            width: 100%;
+            overflow: hidden;
+
+            .song {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 90%;
+                height: 40px;
+                border-radius: 5px;
+                padding: 5px;
+                text-align: center;
+                margin-bottom: 20px;
+
+                .songAalbum {
+                    display: flex;
+                    flex-flow: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    .albumPhoto {
+                        margin: 0 20px;
+                        border-radius: 2px;
+                        background-image: url('');
+                        background-size: contain;
+                        width: 40px;
+                        height: 40px;
+
+
+                    }
+
+                    #txtSong {
+                        font-weight: 500;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .right {
+        grid-area: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-image: url('./left/albums/jhayco-imaginaste.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        overflow: hidden;
+
+        .rightBlur {
+            backdrop-filter: blur(100px);
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .rightBox {
+            position: absolute;
+            width: 80%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+
+            .songPhoto {
+                background-image: url('./left/albums/jhayco-imaginaste.jpg');
+                width: 300px;
+                height: 300px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                border-radius: 20px;
+                box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.75);
+                -webkit-box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.75);
+                margin: 30px 0 0px 0;
+            }
+
+            .dataPlayer {
+                text-align: left;
+                width: 100%;
+                margin: 30px 0;
+
+                span {
+                    display: block;
+                    font-size: 18px;
+                    letter-spacing: 1px;
+                    text-shadow: 2px 2px 5px #000000;
+                }
+
+                .nameSong {
+                    font-weight: bold;
+                }
+
+                .artistRight {
+                    color: #B3B1B2;
+                }
+            }
+
+            .buttonSong {
+                .btnPlay {
+                    box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.75);
+                    -webkit-box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.75);
+                    -moz-box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.75);
+                    background-color: white;
+                    color: black;
+                    transition: .2s all;
+                    text-align: center;
+                    line-height: 30px;
+                    vertical-align: middle;
+                    padding: 10px;
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+
+                }
+
+                margin-bottom:15px;
+
+                .btnBF {
+                    font-size: 15px;
+                    padding: 0px;
+                    color: white;
+                    background: none;
+                }
+            }
+
+            .durationVideo {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                span {
+                    color: #696969;
+                    transition: .2s all;
+                }
+            }
+
+            .songBar {
+                display: block;
+                position: relative;
+                overflow: hidden;
+                -webkit-appearance: none;
+                background-color: #696969;
+                width: 100%;
+                height: 10px;
+                margin-bottom: 5px;
+                box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.75);
+                -webkit-box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.75);
+
+                &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    background-color: #ACACAE;
+                    width: 1px;
+                    height: 15px;
+                    cursor: e-resize;
+                    box-shadow: -400px 0 0 400px #ACACAE;
+                }
+
+                &:active::-webkit-slider-thumb {
+                    background-color: white;
+                    box-shadow: -400px 0 0 400px white;
+                }
+
+            }
+
+            .songBar:active~.durationVideo>#cTimeA {
+                color: white;
+            }
+
+            .volume {
+                width: 90%;
+                display: grid;
+                justify-items: center;
+                align-items: center;
+                grid-template-columns: 5% 80% 5%;
+                grid-template-rows: 1fr;
+                gap: 0px 10px;
+                grid-template-areas:
+                    "low range high";
+
+                i {
+                    font-size: 15px;
+                    color: #696969;
+                }
+
+                .highV {
+                    grid-area: high;
+                }
+
+                .lowV {
+                    grid-area: low;
+                }
+
+                .rangeSound {
+                    grid-area: range;
+                    -webkit-appearance: none;
+                    background-color: #696969;
+                    width: 100%;
+                    outline: none;
+                    height: 10px;
+                    overflow: hidden;
+                    cursor: e-resize;
+                    box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.75);
+                    -webkit-box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.75);
+                    -moz-box-shadow: 10px 10px 35px 0px rgba(0, 0, 0, 0.75);
+
+                    &::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        background-color: #ACACAE;
+                        width: 0px;
+                        height: 15px;
+                        box-shadow: -400px 0 0 400px #ACACAE;
+                    }
+
+                    &:active::-webkit-slider-thumb {
+                        background-color: white;
+                        box-shadow: -400px 0 0 400px white;
+                    }
+
+                    &:active~i {
+                        color: white;
+                    }
+                }
+
+                i {}
+            }
+        }
+    }
+}
+.infoAbout{
+    position: fixed;
+    bottom:0;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    padding:10px;
+    border-radius: 20px 20px 0 0;
+    font-weight: bolder;
+    font-style: italic;
+}
